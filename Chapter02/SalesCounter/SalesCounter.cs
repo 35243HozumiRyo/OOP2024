@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SalesCounter {
     public class SalesCounter {
 
-        private List<Sale> _sales;
+        private IEnumerable<Sale> _sales;
 
         //コンストラクタ
         public SalesCounter(string filePass) { 
@@ -16,7 +16,7 @@ namespace SalesCounter {
         }
 
         //売り上げデートを読み込み、Saleオブジェクトのリストを返す
-        private static List<Sale> ReadSales(String filePath) {
+        private static IEnumerable<Sale> ReadSales(String filePath) {
             List<Sale> sales = new List<Sale>();
             String[] lines = File.ReadAllLines(filePath);
             foreach (String line in lines) {
@@ -33,7 +33,7 @@ namespace SalesCounter {
 
 
         //店舗別の売上を求める
-        public Dictionary<String,int>GetPerStoreSale() {
+        public IDictionary<String,int>GetPerStoreSale() {
 
             Dictionary <String,int> dict = new Dictionary<String,int>();
             foreach (Sale sale in _sales) {
@@ -45,7 +45,8 @@ namespace SalesCounter {
             }
             return dict;
         }
-        public Dictionary<String, int> GetPerProductSale() {
+        //商品別の売上を求める
+        public IDictionary<String, int> GetPerProductSale() {
 
             Dictionary<String, int> dict = new Dictionary<String, int>();
             foreach (Sale sale in _sales) {

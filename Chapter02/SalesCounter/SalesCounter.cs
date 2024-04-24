@@ -35,8 +35,8 @@ namespace SalesCounter {
         //店舗別の売上を求める
         public IDictionary<String,int>GetPerStoreSale() {
 
-            Dictionary <String,int> dict = new Dictionary<String,int>();
-            foreach (Sale sale in _sales) {
+            var dict = new Dictionary<String,int>();
+            foreach (var sale in _sales) {
                 if (dict.ContainsKey(sale.ShopName)) {
                     dict[sale.ShopName] += sale.Amount;
                 } else {
@@ -48,8 +48,8 @@ namespace SalesCounter {
         //商品別の売上を求める
         public IDictionary<String, int> GetPerProductSale() {
 
-            Dictionary<String, int> dict = new Dictionary<String, int>();
-            foreach (Sale sale in _sales) {
+            var dict = new Dictionary<String, int>();
+            foreach (var sale in _sales) {
                 if (dict.ContainsKey(sale.ProductCategory)) {
                     dict[sale.ProductCategory] += sale.Amount;
                 } else {

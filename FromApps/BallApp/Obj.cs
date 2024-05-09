@@ -18,7 +18,9 @@ namespace BallApp {
             PosY = posY;
             Image = Image.FromFile(path);
         }
-        public abstract bool Move();
+
+        //移動メソッド(抽象メソッド)
+        public abstract bool Move(PictureBox pbBar,PictureBox pbBall);
         public abstract bool Move(Keys direction);
     }
 }

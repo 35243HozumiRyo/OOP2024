@@ -19,5 +19,6 @@ namespace BallApp {
             Image = Image.FromFile(path);
         }
         public abstract bool Move();
+        public abstract bool Move(Keys direction);
     }
 }

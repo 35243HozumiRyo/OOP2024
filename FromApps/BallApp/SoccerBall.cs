@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace BallApp {
     internal class SoccerBall:Obj{
+        public static int Count {  get; set; } 
 
         public SoccerBall(double xp, double yp)
             :base(xp-25,yp-25, @"Picture\soccer_ball.png") {
 
-            MoveX = 10;//移動量設定
-            MoveY = 10;
+            Random r = new Random();    
+            MoveX = r.Next(-10,10);//移動量設定
+            MoveY = r.Next(-10,10);
 
+            Count++;
         }
 
         //移動メソッド(抽象メソッド)

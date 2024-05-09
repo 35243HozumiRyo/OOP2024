@@ -14,7 +14,8 @@ namespace BallApp {
 
         //フォームが最初にロードされるとき一度だけ実行される
         private void Form1_Load(object sender, EventArgs e) {
-
+            
+            this.Text = "BallApp SoccerBall:"+SoccerBall.Count+"TennisBall:"+TennisBall.Count;
         }
 
         private void timer1_Tick(object sender, EventArgs e) {

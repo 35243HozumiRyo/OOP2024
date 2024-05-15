@@ -12,10 +12,16 @@ namespace Section01 {
 
             var names = new List<string> { "Tokyo", "New Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong" };
 
-            IEnumerable<string>query = names.Where(s => s.Contains(' '))
-                                            .Select(s=>s.ToUpper());
-            foreach (var name in query) {
-                Console.WriteLine(name);
+            var querty = names.Where(s => s.Length <= 5);
+            foreach (var item in querty) {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("-----------");
+
+            names[0] = "Osaka";
+            foreach (var item in querty) {
+                Console.WriteLine(item);
             }
         }
     }

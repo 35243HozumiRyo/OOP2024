@@ -28,25 +28,22 @@ namespace Exercize01 {
 
         private static void Exercise1_1(List<int> numbers) {
             var exists = numbers.Exists(s => s % 8 == 0 ^ s % 9 == 0);
-            Console.WriteLine(exists);
+            if (exists)
+                Console.WriteLine("存在しています");
+            else
+                Console.WriteLine("存在していません");
         }
 
         private static void Exercise1_2(List<int> numbers) {
-            numbers.ForEach(x => Console.WriteLine(x/2));
+            numbers.ForEach(x => Console.WriteLine(x/2.0));
         }
 
         private static void Exercise1_3(List<int> numbers) {
-            IEnumerable<int>query = numbers.Where(x => x >= 50); 
-            foreach (int x in query) {
-                Console.WriteLine(x);
-            }
+            numbers.Where(n =>50<=n).ToList().ForEach(n => Console.WriteLine(n));
         }
 
         private static void Exercise1_4(List<int> numbers) {
-            var query = numbers.Select(s => s * 2);
-            foreach(int x in query) {
-                Console.WriteLine(x);
-            }
+        numbers.Select(n => n * 2).ToList().ForEach(n => Console.WriteLine(n));
         }
     }
 }

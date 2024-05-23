@@ -19,7 +19,8 @@ namespace BallApp {
         }
 
         //移動メソッド(抽象メソッド)
-        public override bool Move(PictureBox pbBar,PictureBox pbBall) {
+        public override int Move(PictureBox pbBar,PictureBox pbBall) {
+            int ret = 1;
             Rectangle rBar = new Rectangle(pbBar.Location.X,pbBar.Location.Y,pbBar.Width,pbBar.Height);
             Rectangle rBall = new Rectangle(pbBall.Location.X, pbBall.Location.Y, pbBall.Width, pbBall.Height);
 
@@ -27,13 +28,26 @@ namespace BallApp {
             if (PosX > 750 || PosX < 0) {
                 MoveX =- MoveX;
             }
-            if(PosY > 500 || PosY < 0 || rBar.IntersectsWith(rBall)){
+
+            if(PosY < 0 ){
                 MoveY =- MoveY;
             }
+
+            if (PosY > 600) {
+                ret = 2;
+            }
+
+            if (rBar.IntersectsWith(rBall)) {
+                MoveY = -MoveY;
+                PosX += MoveX;
+                PosY += MoveY;
+                ret = 3;
+            }
+
             PosX += MoveX;
             PosY += MoveY;
 
-            return true;
+            return ret;
         }
 
         public override bool Move(Keys direction) {

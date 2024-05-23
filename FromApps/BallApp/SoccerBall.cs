@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace BallApp {
     internal class SoccerBall:Obj{
+        Random r = new Random();
         public static int Count {  get; set; } 
 
         public SoccerBall(double xp, double yp)
             :base(xp-25,yp-25, @"Picture\soccer_ball.png") {
 
-            Random r = new Random();    
+#if DEBUG
+            MoveX = 5;
+            MoveY = 5;
+#else
             MoveX = r.Next(-10,10);//移動量設定
             MoveY = r.Next(-10,10);
+#endif
+          
 
             Count++;
         }
@@ -45,7 +51,7 @@ namespace BallApp {
             }
 
             PosX += MoveX;
-            PosY += MoveY;
+            PosY += MoveY++;
 
             return ret;
         }

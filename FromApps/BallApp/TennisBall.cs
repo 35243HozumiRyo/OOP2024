@@ -13,8 +13,13 @@ namespace BallApp {
             : base(xp, yp, @"Picture\tennis_ball.png") {
 
             Random r = new Random();
-            MoveX = r.Next(-10, 10);//移動量設定
-            MoveY = r.Next(-10, 10);
+#if DEBUG
+            MoveX = 5;
+            MoveY = 5;
+#else
+            MoveX = r.Next(-10,10);//移動量設定
+            MoveY = r.Next(-10,10);
+#endif
 
             Count++;
         }
@@ -47,7 +52,7 @@ namespace BallApp {
             }
 
             PosX += MoveX;
-            PosY += MoveY;
+            PosY += MoveY++;
 
             return ret;
         }

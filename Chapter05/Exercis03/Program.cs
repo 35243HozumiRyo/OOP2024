@@ -24,24 +24,24 @@ namespace Exercis03 {
             Exercise3_5(text);
         }
 
-        private static void Exercise3_5(string text) {
-          //  Console.WriteLine(text(s,' '));
-        }
-
-        private static void Exercise3_4(string text) {
-            throw new NotImplementedException();
-        }
-
-        private static void Exercise3_3(string text) {
-            throw new NotImplementedException();
+        private static void Exercise3_1(string text) {
+            Console.WriteLine(text.Length - text.Replace(' '.ToString(),"").Length);
         }
 
         private static void Exercise3_2(string text) {
-            throw new NotImplementedException();
+            Console.WriteLine(text.Replace("big","small"));
         }
 
-        private static void Exercise3_1(string text) {
-            throw new NotImplementedException();
+        private static void Exercise3_3(string text) {
+            Console.WriteLine(text.Length - text.Replace(' '.ToString(), "").Length + 1);
+        }
+
+        private static void Exercise3_4(string text) {
+            
+        }
+
+        private static void Exercise3_5(string text) {
+            
         }
     }
 }

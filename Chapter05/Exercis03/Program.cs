@@ -25,7 +25,7 @@ namespace Exercis03 {
         }
 
         private static void Exercise3_5(string text) {
-            throw new NotImplementedException();
+          //  Console.WriteLine(text(s,' '));
         }
 
         private static void Exercise3_4(string text) {

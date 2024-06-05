@@ -39,34 +39,34 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_1(List<Book> books) {
-            var book = books.TakeWhile(n => n.Title.Equals("ワンダフル・C#ライフ"));
+            var book = books.Where(n => n.Title.Equals("ワンダフル・C#ライフ"));
             foreach(var i in book) {
                 Console.WriteLine("{0},{1}",i.Price,i.Pages);
             }
         }
 
         private static void Exercise2_2(List<Book> books) {
-            throw new NotImplementedException();
+            Console.WriteLine(books.Count(x => x.Title.Contains("C#")));
         }
 
         private static void Exercise2_3(List<Book> books) {
-            throw new NotImplementedException();
+            
         }
 
         private static void Exercise2_4(List<Book> books) {
-            throw new NotImplementedException();
+            
         }
 
         private static void Exercise2_5(List<Book> books) {
-            throw new NotImplementedException();
+            
         }
 
         private static void Exercise2_6(List<Book> books) {
-            throw new NotImplementedException();
+            
         }
 
         private static void Exercise2_7(List<Book> books) {
-            throw new NotImplementedException();
+            
         }
 
         class Book {

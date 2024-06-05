@@ -40,9 +40,7 @@ namespace Exercise02 {
 
         private static void Exercise2_1(List<Book> books) {
             var book = books.Where(n => n.Title.Equals("ワンダフル・C#ライフ"));
-            foreach(var i in book) {
-                Console.WriteLine("{0},{1}",i.Price,i.Pages);
-            }
+            foreach(var i in book)Console.WriteLine("{0},{1}",i.Price,i.Pages);
         }
 
         private static void Exercise2_2(List<Book> books) {
@@ -50,11 +48,12 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_3(List<Book> books) {
-            
+            var count = books.Where(n => n.Title.Contains("C#"));
+            Console.WriteLine(count.Average(x => x.Pages));
         }
 
         private static void Exercise2_4(List<Book> books) {
-            
+            Console.WriteLine(books.FirstOrDefault(x=>x.Price >= 4000).Title);
         }
 
         private static void Exercise2_5(List<Book> books) {

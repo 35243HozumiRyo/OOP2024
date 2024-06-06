@@ -41,9 +41,9 @@ namespace Exercise02 {
         private static void Exercise2_1(List<Book> books) {
             var book = books.Where(n => n.Title.Equals("ワンダフル・C#ライフ"));
             foreach(var i in book)Console.WriteLine("{0},{1}",i.Price,i.Pages);
-            Console.WriteLine("-----模範解答-----");
-            var books2 = books.Where(b => b.Title == "ワンダフル・C#ライフ");
-            foreach (var book2 in books2) Console.WriteLine("{0},{1}", book2.Price, book2.Pages);
+            //模範解答
+            //var books2 = books.Where(b => b.Title == "ワンダフル・C#ライフ");
+            //foreach (var book2 in books2) Console.WriteLine("{0},{1}", book2.Price, book2.Pages);
         }
 
         private static void Exercise2_2(List<Book> books) {
@@ -57,9 +57,9 @@ namespace Exercise02 {
 
         private static void Exercise2_4(List<Book> books) {
             Console.WriteLine(books.FirstOrDefault(x=>x.Price >= 4000).Title);
-            Console.WriteLine("-----模範解答-----");
-            var book = books.FirstOrDefault(b => b.Price >= 4000);
-            if(book != null) Console.WriteLine(book.Title);
+            //模範解答
+            //var book = books.FirstOrDefault(b => b.Price >= 4000);
+            //if(book != null) Console.WriteLine(book.Title);
         }
 
         private static void Exercise2_5(List<Book> books) {
@@ -69,13 +69,16 @@ namespace Exercise02 {
         private static void Exercise2_6(List<Book> books) {
             var book = books.Where(x => x.Pages >= 400)
                             .OrderByDescending(x => x.Price);
-            foreach(var i in book) Console.WriteLine(i.Title);
+            foreach(var i in book) Console.WriteLine(i.Title,i.Price);
         }
 
         private static void Exercise2_7(List<Book> books) {
             var book = books.Where(b => b.Title.Contains("C#"))
                             .Where(b=>b.Pages<500);
             foreach (var i in book) Console.WriteLine(i.Title);
+            //模範解答
+            //var selected = books.Where(b=>b.Title.Contains("C#") && b.Pages<=500);
+            //foreach (var i in selected) Console.WriteLine(i.Title);
         }
 
         class Book {

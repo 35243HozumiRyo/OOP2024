@@ -32,26 +32,26 @@ namespace Exercise01 {
         private static void Exercise1_2(int[] numbers) {
             for(int i = numbers.Length-2 ; i < numbers.Length ; i ++)
                 Console.WriteLine(numbers[i]);
-            Console.WriteLine("-----模範解答-----");
-            var skip = numbers.Length - 2;
-            foreach (int number in numbers.Skip(skip)) Console.WriteLine(number);
+            //模範解答
+            //var skip = numbers.Length - 2;
+            //foreach (int number in numbers.Skip(skip)) Console.WriteLine(number);
         }
 
         private static void Exercise1_3(int[] numbers) {
             string[] result = numbers.Select(i => i.ToString()).ToArray();
             Console.WriteLine(String.Join(", ", result));
-            Console.WriteLine("-----模範解答-----");
-            var Strings = numbers.Select(n => n.ToString());
-            foreach (string str in Strings) Console.WriteLine(str);
+            //模範解答
+            //var Strings = numbers.Select(n => n.ToString());
+            //foreach (string str in Strings) Console.WriteLine(str);
         }
 
         private static void Exercise1_4(int[] numbers) {
             var sort = numbers.OrderBy(n => n).ToArray();
             for (int i = 0; i < 3; i++) Console.WriteLine(sort[i]);
-            Console.WriteLine("-----模範解答-----");
-            foreach(var number in numbers.OrderBy(n => n).Take(3)) {
-                Console.WriteLine(number);
-            }
+            //模範解答
+            //foreach (var number in numbers.OrderBy(n => n).Take(3)) {
+            //    Console.WriteLine(number);
+            //}
         }
 
         private static void Exercise1_5(int[] numbers) {

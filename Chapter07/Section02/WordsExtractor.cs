@@ -43,5 +43,6 @@ namespace Section02 {
                     yield return word;
             }
         }
+
     }
 }

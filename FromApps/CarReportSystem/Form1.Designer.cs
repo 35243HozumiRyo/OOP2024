@@ -32,16 +32,16 @@
             cbAuther = new ComboBox();
             rbToyota = new RadioButton();
             groupBox1 = new GroupBox();
+            rbOther = new RadioButton();
+            rbImport = new RadioButton();
+            rbSubaru = new RadioButton();
+            rbHonda = new RadioButton();
+            rbNissan = new RadioButton();
             cbCarName = new ComboBox();
             label6 = new Label();
             btPicOpen = new Button();
             btPicDelete = new Button();
             pbPicture = new PictureBox();
-            rbNissan = new RadioButton();
-            rbHonda = new RadioButton();
-            rbSubaru = new RadioButton();
-            rbImport = new RadioButton();
-            rbOther = new RadioButton();
             label7 = new Label();
             dgvCarReport = new DataGridView();
             tbReport = new TextBox();
@@ -147,6 +147,61 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
+            // rbOther
+            // 
+            rbOther.AutoSize = true;
+            rbOther.Location = new Point(303, 17);
+            rbOther.Name = "rbOther";
+            rbOther.Size = new Size(56, 19);
+            rbOther.TabIndex = 3;
+            rbOther.TabStop = true;
+            rbOther.Text = "その他";
+            rbOther.UseVisualStyleBackColor = true;
+            // 
+            // rbImport
+            // 
+            rbImport.AutoSize = true;
+            rbImport.Location = new Point(236, 17);
+            rbImport.Name = "rbImport";
+            rbImport.Size = new Size(61, 19);
+            rbImport.TabIndex = 3;
+            rbImport.TabStop = true;
+            rbImport.Text = "輸入車";
+            rbImport.UseVisualStyleBackColor = true;
+            // 
+            // rbSubaru
+            // 
+            rbSubaru.AutoSize = true;
+            rbSubaru.Location = new Point(176, 16);
+            rbSubaru.Name = "rbSubaru";
+            rbSubaru.Size = new Size(54, 19);
+            rbSubaru.TabIndex = 3;
+            rbSubaru.TabStop = true;
+            rbSubaru.Text = "スバル";
+            rbSubaru.UseVisualStyleBackColor = true;
+            // 
+            // rbHonda
+            // 
+            rbHonda.AutoSize = true;
+            rbHonda.Location = new Point(117, 17);
+            rbHonda.Name = "rbHonda";
+            rbHonda.Size = new Size(53, 19);
+            rbHonda.TabIndex = 3;
+            rbHonda.TabStop = true;
+            rbHonda.Text = "ホンダ";
+            rbHonda.UseVisualStyleBackColor = true;
+            // 
+            // rbNissan
+            // 
+            rbNissan.AutoSize = true;
+            rbNissan.Location = new Point(62, 17);
+            rbNissan.Name = "rbNissan";
+            rbNissan.Size = new Size(49, 19);
+            rbNissan.TabIndex = 3;
+            rbNissan.TabStop = true;
+            rbNissan.Text = "日産";
+            rbNissan.UseVisualStyleBackColor = true;
+            // 
             // cbCarName
             // 
             cbCarName.Font = new Font("Yu Gothic UI", 14F);
@@ -160,7 +215,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic UI", 14F);
-            label6.Location = new Point(514, 10);
+            label6.Location = new Point(545, 11);
             label6.Name = "label6";
             label6.Size = new Size(50, 25);
             label6.TabIndex = 0;
@@ -168,18 +223,18 @@
             // 
             // btPicOpen
             // 
-            btPicOpen.Location = new Point(593, 11);
+            btPicOpen.Location = new Point(641, 11);
             btPicOpen.Name = "btPicOpen";
-            btPicOpen.Size = new Size(75, 23);
+            btPicOpen.Size = new Size(54, 23);
             btPicOpen.TabIndex = 5;
             btPicOpen.Text = "開く...";
             btPicOpen.UseVisualStyleBackColor = true;
             // 
             // btPicDelete
             // 
-            btPicDelete.Location = new Point(683, 11);
+            btPicDelete.Location = new Point(701, 11);
             btPicDelete.Name = "btPicDelete";
-            btPicDelete.Size = new Size(75, 23);
+            btPicDelete.Size = new Size(57, 23);
             btPicDelete.TabIndex = 5;
             btPicDelete.Text = "削除";
             btPicDelete.UseVisualStyleBackColor = true;
@@ -192,61 +247,6 @@
             pbPicture.Size = new Size(213, 186);
             pbPicture.TabIndex = 6;
             pbPicture.TabStop = false;
-            // 
-            // rbNissan
-            // 
-            rbNissan.AutoSize = true;
-            rbNissan.Location = new Point(62, 17);
-            rbNissan.Name = "rbNissan";
-            rbNissan.Size = new Size(49, 19);
-            rbNissan.TabIndex = 3;
-            rbNissan.TabStop = true;
-            rbNissan.Text = "日産";
-            rbNissan.UseVisualStyleBackColor = true;
-            // 
-            // rbHonda
-            // 
-            rbHonda.AutoSize = true;
-            rbHonda.Location = new Point(117, 17);
-            rbHonda.Name = "rbHonda";
-            rbHonda.Size = new Size(53, 19);
-            rbHonda.TabIndex = 3;
-            rbHonda.TabStop = true;
-            rbHonda.Text = "ホンダ";
-            rbHonda.UseVisualStyleBackColor = true;
-            // 
-            // rbSubaru
-            // 
-            rbSubaru.AutoSize = true;
-            rbSubaru.Location = new Point(176, 16);
-            rbSubaru.Name = "rbSubaru";
-            rbSubaru.Size = new Size(54, 19);
-            rbSubaru.TabIndex = 3;
-            rbSubaru.TabStop = true;
-            rbSubaru.Text = "スバル";
-            rbSubaru.UseVisualStyleBackColor = true;
-            // 
-            // rbImport
-            // 
-            rbImport.AutoSize = true;
-            rbImport.Location = new Point(236, 17);
-            rbImport.Name = "rbImport";
-            rbImport.Size = new Size(61, 19);
-            rbImport.TabIndex = 3;
-            rbImport.TabStop = true;
-            rbImport.Text = "輸入車";
-            rbImport.UseVisualStyleBackColor = true;
-            // 
-            // rbOther
-            // 
-            rbOther.AutoSize = true;
-            rbOther.Location = new Point(303, 17);
-            rbOther.Name = "rbOther";
-            rbOther.Size = new Size(56, 19);
-            rbOther.TabIndex = 3;
-            rbOther.TabStop = true;
-            rbOther.Text = "その他";
-            rbOther.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -290,7 +290,7 @@
             // btDeleteReport
             // 
             btDeleteReport.Font = new Font("Yu Gothic UI", 12F);
-            btDeleteReport.Location = new Point(707, 232);
+            btDeleteReport.Location = new Point(701, 232);
             btDeleteReport.Name = "btDeleteReport";
             btDeleteReport.Size = new Size(57, 39);
             btDeleteReport.TabIndex = 11;
@@ -320,7 +320,7 @@
             // btModfyReport
             // 
             btModfyReport.Font = new Font("Yu Gothic UI", 12F);
-            btModfyReport.Location = new Point(626, 232);
+            btModfyReport.Location = new Point(624, 232);
             btModfyReport.Name = "btModfyReport";
             btModfyReport.Size = new Size(57, 39);
             btModfyReport.TabIndex = 10;

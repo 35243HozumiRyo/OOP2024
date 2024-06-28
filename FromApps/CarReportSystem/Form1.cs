@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using static CarReportSystem.CarReport;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
@@ -14,7 +15,7 @@ namespace CarReportSystem {
         private void btAddReport_Click(object sender, EventArgs e) {
             CarReport carReport = new CarReport {
                 Date = dtpDate.Value,
-                Auther = cbAuther.Text,
+                Author = cbAuthor.Text,
                 Maker = GetRadioBottonMaker(),
                 NarName = cbCarName.Text,
                 Report = tbReport.Text,
@@ -47,6 +48,18 @@ namespace CarReportSystem {
 
         private void btPicDelete_Click(object sender, EventArgs e) {
             pbPicture.Image = null;
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            dgvCarReport.Columns[5].Visible = false;
+        }
+
+        private void dgvCarReport_Click(object sender, EventArgs e) {
+            dtpDate.Value = (DateTime)dgvCarReport.CurrentRow.Cells["Date"].Value;
+            cbAuthor.Text = (string)dgvCarReport.CurrentRow.Cells["記録者"].Value;
+            //dtpDate. = (MakerGroup)dgvCarReport.CurrentRow.Cells["メーカー"].Value;
+            cbCarName.Text = (string)dgvCarReport.CurrentRow.Cells["車名"].Value;
+            pbPicture.Text = (string)dgvCarReport.CurrentRow.Cells["レポート"].Value;
         }
     }
 }

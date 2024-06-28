@@ -29,7 +29,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            cbAuther = new ComboBox();
+            cbAuthor = new ComboBox();
             rbToyota = new RadioButton();
             groupBox1 = new GroupBox();
             rbOther = new RadioButton();
@@ -116,12 +116,12 @@
             // 
             // cbAuther
             // 
-            cbAuther.Font = new Font("Yu Gothic UI", 14F);
-            cbAuther.FormattingEnabled = true;
-            cbAuther.Location = new Point(91, 49);
-            cbAuther.Name = "cbAuther";
-            cbAuther.Size = new Size(272, 33);
-            cbAuther.TabIndex = 2;
+            cbAuthor.Font = new Font("Yu Gothic UI", 14F);
+            cbAuthor.FormattingEnabled = true;
+            cbAuthor.Location = new Point(91, 49);
+            cbAuthor.Name = "cbAuthor";
+            cbAuthor.Size = new Size(272, 33);
+            cbAuthor.TabIndex = 2;
             // 
             // rbToyota
             // 
@@ -275,6 +275,7 @@
             dgvCarReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCarReport.Size = new Size(673, 150);
             dgvCarReport.TabIndex = 7;
+            dgvCarReport.Click += dgvCarReport_Click;
             // 
             // tbReport
             // 
@@ -356,7 +357,7 @@
             Controls.Add(btPicOpen);
             Controls.Add(groupBox1);
             Controls.Add(cbCarName);
-            Controls.Add(cbAuther);
+            Controls.Add(cbAuthor);
             Controls.Add(dtpDate);
             Controls.Add(label7);
             Controls.Add(label5);
@@ -367,6 +368,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "試乗レポート管理システム";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).EndInit();
@@ -383,7 +385,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private ComboBox cbAuther;
+        private ComboBox cbAuthor;
         private RadioButton rbToyota;
         private GroupBox groupBox1;
         private ComboBox cbCarName;

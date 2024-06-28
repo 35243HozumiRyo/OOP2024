@@ -50,6 +50,7 @@
             btReportOpen = new Button();
             btReportSave = new Button();
             btModfyReport = new Button();
+            ofdPicFileOpen = new OpenFileDialog();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).BeginInit();
@@ -229,6 +230,7 @@
             btPicOpen.TabIndex = 5;
             btPicOpen.Text = "開く...";
             btPicOpen.UseVisualStyleBackColor = true;
+            btPicOpen.Click += btPicOpen_Click;
             // 
             // btPicDelete
             // 
@@ -238,6 +240,7 @@
             btPicDelete.TabIndex = 5;
             btPicDelete.Text = "削除";
             btPicDelete.UseVisualStyleBackColor = true;
+            btPicDelete.Click += btPicDelete_Click;
             // 
             // pbPicture
             // 
@@ -245,6 +248,7 @@
             pbPicture.Location = new Point(545, 40);
             pbPicture.Name = "pbPicture";
             pbPicture.Size = new Size(213, 186);
+            pbPicture.SizeMode = PictureBoxSizeMode.Zoom;
             pbPicture.TabIndex = 6;
             pbPicture.TabStop = false;
             // 
@@ -262,10 +266,13 @@
             // 
             dgvCarReport.AllowUserToAddRows = false;
             dgvCarReport.AllowUserToDeleteRows = false;
+            dgvCarReport.BackgroundColor = SystemColors.ActiveCaption;
             dgvCarReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCarReport.Location = new Point(85, 277);
+            dgvCarReport.MultiSelect = false;
             dgvCarReport.Name = "dgvCarReport";
             dgvCarReport.ReadOnly = true;
+            dgvCarReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCarReport.Size = new Size(673, 150);
             dgvCarReport.TabIndex = 7;
             // 
@@ -327,6 +334,10 @@
             btModfyReport.TabIndex = 10;
             btModfyReport.Text = "修正";
             btModfyReport.UseVisualStyleBackColor = true;
+            // 
+            // ofdPicFileOpen
+            // 
+            ofdPicFileOpen.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -393,5 +404,6 @@
         private Button btReportOpen;
         private Button btReportSave;
         private Button btModfyReport;
+        private OpenFileDialog ofdPicFileOpen;
     }
 }

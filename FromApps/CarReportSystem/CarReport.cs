@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +23,14 @@ namespace CarReportSystem {
         [System.ComponentModel.DisplayName("メーカー")]
         public MakerGroup Maker { get; set; }                 //メーカー
         [System.ComponentModel.DisplayName("車名")]
-        public string NarName { get; set; } = string.Empty;   //車名
+        public string CarName { get; set; } = string.Empty;   //車名
         [System.ComponentModel.DisplayName("レポート")]
         public string Report { get; set; } = string.Empty;    //レポート
         [System.ComponentModel.DisplayName("画像")]
         public Image? Picture { get; set; }                   //画像
 
-
-
+        public static implicit operator CarReport(BindingList<CarReport> v) {
+            throw new NotImplementedException();
+        }
     }
 }

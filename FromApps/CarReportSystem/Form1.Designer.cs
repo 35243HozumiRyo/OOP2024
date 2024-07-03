@@ -51,9 +51,12 @@
             btReportSave = new Button();
             btModfyReport = new Button();
             ofdPicFileOpen = new OpenFileDialog();
+            statusStrip1 = new StatusStrip();
+            tslbMessage = new ToolStripStatusLabel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -256,7 +259,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic UI", 14F);
-            label7.Location = new Point(16, 277);
+            label7.Location = new Point(29, 277);
             label7.Name = "label7";
             label7.Size = new Size(50, 25);
             label7.TabIndex = 0;
@@ -273,7 +276,7 @@
             dgvCarReport.Name = "dgvCarReport";
             dgvCarReport.ReadOnly = true;
             dgvCarReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCarReport.Size = new Size(673, 150);
+            dgvCarReport.Size = new Size(673, 148);
             dgvCarReport.TabIndex = 7;
             dgvCarReport.Click += dgvCarReport_Click;
             // 
@@ -310,7 +313,7 @@
             // btReportOpen
             // 
             btReportOpen.Font = new Font("Yu Gothic UI", 14F);
-            btReportOpen.Location = new Point(12, 340);
+            btReportOpen.Location = new Point(12, 339);
             btReportOpen.Name = "btReportOpen";
             btReportOpen.Size = new Size(68, 40);
             btReportOpen.TabIndex = 12;
@@ -320,7 +323,7 @@
             // btReportSave
             // 
             btReportSave.Font = new Font("Yu Gothic UI", 14F);
-            btReportSave.Location = new Point(12, 386);
+            btReportSave.Location = new Point(12, 385);
             btReportSave.Name = "btReportSave";
             btReportSave.Size = new Size(68, 40);
             btReportSave.TabIndex = 13;
@@ -342,11 +345,26 @@
             // 
             ofdPicFileOpen.FileName = "openFileDialog1";
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { tslbMessage });
+            statusStrip1.Location = new Point(0, 428);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.TabIndex = 14;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // tslbMessage
+            // 
+            tslbMessage.Name = "tslbMessage";
+            tslbMessage.Size = new Size(0, 17);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(statusStrip1);
             Controls.Add(btReportSave);
             Controls.Add(btReportOpen);
             Controls.Add(btDeleteReport);
@@ -375,6 +393,8 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -409,5 +429,7 @@
         private Button btReportSave;
         private Button btModfyReport;
         private OpenFileDialog ofdPicFileOpen;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel tslbMessage;
     }
 }

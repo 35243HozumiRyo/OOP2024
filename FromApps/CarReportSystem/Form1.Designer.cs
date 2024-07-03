@@ -114,7 +114,7 @@
             label5.TabIndex = 0;
             label5.Text = "レポート";
             // 
-            // cbAuther
+            // cbAuthor
             // 
             cbAuthor.Font = new Font("Yu Gothic UI", 14F);
             cbAuthor.FormattingEnabled = true;
@@ -305,6 +305,7 @@
             btDeleteReport.TabIndex = 11;
             btDeleteReport.Text = "削除";
             btDeleteReport.UseVisualStyleBackColor = true;
+            btDeleteReport.Click += btDeleteReport_Click;
             // 
             // btReportOpen
             // 
@@ -335,6 +336,7 @@
             btModfyReport.TabIndex = 10;
             btModfyReport.Text = "修正";
             btModfyReport.UseVisualStyleBackColor = true;
+            btModfyReport.Click += btModfyReport_Click;
             // 
             // ofdPicFileOpen
             // 

@@ -1,15 +1,16 @@
 using System.ComponentModel;
+using System.Drawing.Text;
 using static CarReportSystem.CarReport;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
 
         //カーレポート
-        BindingList<CarReport> ListCarReports = new BindingList<CarReport>();
+        BindingList<CarReport> listCarReports = new BindingList<CarReport>();
 
         public Form1() {
             InitializeComponent();
-            dgvCarReport.DataSource = ListCarReports;
+            dgvCarReport.DataSource = listCarReports;
         }
 
         private void btAddReport_Click(object sender, EventArgs e) {
@@ -21,7 +22,7 @@ namespace CarReportSystem {
                 Report = tbReport.Text,
                 Picture = pbPicture.Image,
             };
-            ListCarReports.Add(carReport);
+            listCarReports.Add(carReport);
         }
 
         private CarReport.MakerGroup GetRadioBottonMaker() {
@@ -40,6 +41,24 @@ namespace CarReportSystem {
 
             return CarReport.MakerGroup.その他;
         }
+        private void setRadioButtonMaker(CarReport.MakerGroup targetMaker) {
+            switch (targetMaker) {
+                case CarReport.MakerGroup.トヨタ:
+                    break;
+                case CarReport.MakerGroup.日産:
+                    break;
+                case CarReport.MakerGroup.ホンダ:
+                    break;
+                case CarReport.MakerGroup.スバル:
+                    break;
+                case CarReport.MakerGroup.輸入車:
+                    break;
+                case CarReport.MakerGroup.その他:
+                    break;
+                default:
+                    break;
+            }
+        }
 
         private void btPicOpen_Click(object sender, EventArgs e) {
             if (ofdPicFileOpen.ShowDialog() == DialogResult.OK)
@@ -57,9 +76,18 @@ namespace CarReportSystem {
         private void dgvCarReport_Click(object sender, EventArgs e) {
             dtpDate.Value = (DateTime)dgvCarReport.CurrentRow.Cells["Date"].Value;
             cbAuthor.Text = (string)dgvCarReport.CurrentRow.Cells["記録者"].Value;
-            //dtpDate. = (MakerGroup)dgvCarReport.CurrentRow.Cells["メーカー"].Value;
+            setRadioButtonMaker((CarReport.MakerGroup)dgvCarReport.CurrentRow.Cells["MaKer"].Value);
             cbCarName.Text = (string)dgvCarReport.CurrentRow.Cells["車名"].Value;
             pbPicture.Text = (string)dgvCarReport.CurrentRow.Cells["レポート"].Value;
+        }
+
+        private void btDeleteReport_Click(object sender, EventArgs e) {
+            listCarReports.RemoveAt(dgvCarReport.CurrentRow.Index);
+        }
+
+        private void btModfyReport_Click(object sender, EventArgs e) {
+
+            dgvCarReport.Refresh();//データグリッドビューの更新
         }
     }
 }

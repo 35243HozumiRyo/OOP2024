@@ -121,30 +121,30 @@ namespace CarReportSystem {
         }
 
         private void dgvCarReport_Click(object sender, EventArgs e) {
-            if (dgvCarReport.CurrentCell == null) {
-                return;
-            } else {
+            if ((dgvCarReport.CurrentCell == null)
+                || (!dgvCarReport.CurrentRow.Selected)) return;
+            
                 dtpDate.Value = (DateTime)dgvCarReport.CurrentRow.Cells["Date"].Value;
                 cbAuthor.Text = (string)dgvCarReport.CurrentRow.Cells["Author"].Value;
                 SetRadioButtonMaker((CarReport.MakerGroup)dgvCarReport.CurrentRow.Cells["Maker"].Value);
                 cbCarName.Text = (string)dgvCarReport.CurrentRow.Cells["CarName"].Value;
                 pbPicture.Text = (string)dgvCarReport.CurrentRow.Cells["Report"].Value;
                 pbPicture.Image = (Image)dgvCarReport.CurrentRow.Cells["picture"].Value;
-            }
+            
         }
 
         //削除ボタン
         private void btDeleteReport_Click(object sender, EventArgs e) {
-            if (dgvCarReport.CurrentCell == null) {
-                return;
-            } else {
-                listCarReports.RemoveAt(dgvCarReport.CurrentRow.Index);
-            }
+            if ((dgvCarReport.CurrentCell == null)
+                || (!dgvCarReport.CurrentRow.Selected)) return;
+
+            listCarReports.RemoveAt(dgvCarReport.CurrentRow.Index);
         }
 
         //修正ボタン
         private void btModfyReport_Click(object sender, EventArgs e) {
-            if (listCarReports.Count == 0) return;
+            if ((listCarReports.Count == 0)
+                || (!dgvCarReport.CurrentRow.Selected)) return;
 
             listCarReports[dgvCarReport.CurrentRow.Index].Date = dtpDate.Value;
             listCarReports[dgvCarReport.CurrentRow.Index].Author = cbAuthor.Text;

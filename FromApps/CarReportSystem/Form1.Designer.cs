@@ -53,6 +53,8 @@
             ofdPicFileOpen = new OpenFileDialog();
             statusStrip1 = new StatusStrip();
             tslbMessage = new ToolStripStatusLabel();
+            ofdReportFileOpen = new OpenFileDialog();
+            sfdReportFileSave = new SaveFileDialog();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).BeginInit();
@@ -65,9 +67,9 @@
             label1.Font = new Font("Yu Gothic UI", 14F);
             label1.Location = new Point(12, 11);
             label1.Name = "label1";
-            label1.Size = new Size(54, 25);
+            label1.Size = new Size(50, 25);
             label1.TabIndex = 0;
-            label1.Text = "日付:";
+            label1.Text = "日付";
             // 
             // dtpDate
             // 
@@ -83,9 +85,9 @@
             label2.Font = new Font("Yu Gothic UI", 14F);
             label2.Location = new Point(12, 52);
             label2.Name = "label2";
-            label2.Size = new Size(73, 25);
+            label2.Size = new Size(69, 25);
             label2.TabIndex = 0;
-            label2.Text = "記録者:";
+            label2.Text = "記録者";
             // 
             // label3
             // 
@@ -317,6 +319,7 @@
             btReportOpen.TabIndex = 12;
             btReportOpen.Text = "開く...";
             btReportOpen.UseVisualStyleBackColor = true;
+            btReportOpen.Click += btReportOpen_Click;
             // 
             // btReportSave
             // 
@@ -327,6 +330,7 @@
             btReportSave.TabIndex = 13;
             btReportSave.Text = "保存..";
             btReportSave.UseVisualStyleBackColor = true;
+            btReportSave.Click += btReportSave_Click;
             // 
             // btModfyReport
             // 
@@ -357,6 +361,10 @@
             // 
             tslbMessage.Name = "tslbMessage";
             tslbMessage.Size = new Size(0, 17);
+            // 
+            // ofdReportFileOpen
+            // 
+            ofdReportFileOpen.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -432,5 +440,7 @@
         private OpenFileDialog ofdPicFileOpen;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tslbMessage;
+        private OpenFileDialog ofdReportFileOpen;
+        private SaveFileDialog sfdReportFileSave;
     }
 }

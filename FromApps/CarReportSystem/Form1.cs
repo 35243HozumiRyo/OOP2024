@@ -1,6 +1,8 @@
 using System.ComponentModel;
+using System.Data;
 using System.DirectoryServices.ActiveDirectory;
 using System.Drawing.Text;
+using System.Runtime.Serialization.Formatters.Binary;
 using static CarReportSystem.CarReport;
 
 namespace CarReportSystem {
@@ -123,14 +125,14 @@ namespace CarReportSystem {
         private void dgvCarReport_Click(object sender, EventArgs e) {
             if ((dgvCarReport.CurrentCell == null)
                 || (!dgvCarReport.CurrentRow.Selected)) return;
-            
-                dtpDate.Value = (DateTime)dgvCarReport.CurrentRow.Cells["Date"].Value;
-                cbAuthor.Text = (string)dgvCarReport.CurrentRow.Cells["Author"].Value;
-                SetRadioButtonMaker((CarReport.MakerGroup)dgvCarReport.CurrentRow.Cells["Maker"].Value);
-                cbCarName.Text = (string)dgvCarReport.CurrentRow.Cells["CarName"].Value;
-                pbPicture.Text = (string)dgvCarReport.CurrentRow.Cells["Report"].Value;
-                pbPicture.Image = (Image)dgvCarReport.CurrentRow.Cells["picture"].Value;
-            
+
+            dtpDate.Value = (DateTime)dgvCarReport.CurrentRow.Cells["Date"].Value;
+            cbAuthor.Text = (string)dgvCarReport.CurrentRow.Cells["Author"].Value;
+            SetRadioButtonMaker((CarReport.MakerGroup)dgvCarReport.CurrentRow.Cells["Maker"].Value);
+            cbCarName.Text = (string)dgvCarReport.CurrentRow.Cells["CarName"].Value;
+            pbPicture.Text = (string)dgvCarReport.CurrentRow.Cells["Report"].Value;
+            pbPicture.Image = (Image)dgvCarReport.CurrentRow.Cells["picture"].Value;
+
         }
 
         //削除ボタン
@@ -163,12 +165,54 @@ namespace CarReportSystem {
             SetCbCarName(cbCarName.Text);
         }
 
+        //記録者のテキストが編集されたら
         private void cbAuthor_TextChanged(object sender, EventArgs e) {
             tslbMessage.Text = "";
         }
 
+        //車名のテキストが編集されたら
         private void cbCarName_TextChanged(object sender, EventArgs e) {
             tslbMessage.Text = "";
+        }
+
+        //保存ボタン
+        private void btReportSave_Click(object sender, EventArgs e) {
+            if (sfdReportFileSave.ShowDialog() == DialogResult.OK) {
+                try {
+                    //バイナリ形式でシリアル化
+#pragma warning disable SYSLIB0011 // 型またはメンバーが旧型式です
+                    var bf = new BinaryFormatter();
+#pragma warning restore SYSLIB0011 // 型またはメンバーが旧型式です
+                    using (FileStream fs = File.Open(sfdReportFileSave.FileName, FileMode.Create)) {
+                        bf.Serialize(fs, listCarReports);
+
+                    }
+                }
+                catch (Exception) {
+
+                    throw;
+                }
+            }
+        }
+
+        private void btReportOpen_Click(object sender, EventArgs e) {
+            if (ofdPicFileOpen.ShowDialog() == DialogResult.OK) {
+                try {
+                    //逆シリアル化でバイナリ形式を取り込む
+#pragma warning disable SYSLIB0011 // 型またはメンバーが旧型式です
+                    var bf = new BinaryFormatter();
+#pragma warning restore SYSLIB0011 // 型またはメンバーが旧型式です
+                    using (FileStream fs = File.Open(ofdPicFileOpen.FileName, FileMode.Open, FileAccess.Read)) {
+
+                        listCarReports = (BindingList<CarReport>)bf.Deserialize(fs);
+                        dgvCarReport.DataSource = listCarReports;
+                    }
+                }
+                catch (Exception) {
+
+                    throw;
+                }
+            }
         }
     }
 }

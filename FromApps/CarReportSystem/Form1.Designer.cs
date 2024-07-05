@@ -125,6 +125,7 @@
             cbAuthor.Name = "cbAuthor";
             cbAuthor.Size = new Size(272, 33);
             cbAuthor.TabIndex = 2;
+            cbAuthor.TextChanged += cbAuthor_TextChanged;
             // 
             // rbToyota
             // 
@@ -214,6 +215,7 @@
             cbCarName.Name = "cbCarName";
             cbCarName.Size = new Size(273, 33);
             cbCarName.TabIndex = 2;
+            cbCarName.TextChanged += cbCarName_TextChanged;
             // 
             // label6
             // 

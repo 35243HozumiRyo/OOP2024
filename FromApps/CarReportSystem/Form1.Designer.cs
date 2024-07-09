@@ -55,6 +55,8 @@
             tslbMessage = new ToolStripStatusLabel();
             ofdReportFileOpen = new OpenFileDialog();
             sfdReportFileSave = new SaveFileDialog();
+            btReportClear = new Button();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).BeginInit();
@@ -313,7 +315,7 @@
             // btReportOpen
             // 
             btReportOpen.Font = new Font("Yu Gothic UI", 14F);
-            btReportOpen.Location = new Point(12, 339);
+            btReportOpen.Location = new Point(13, 339);
             btReportOpen.Name = "btReportOpen";
             btReportOpen.Size = new Size(68, 40);
             btReportOpen.TabIndex = 12;
@@ -324,7 +326,7 @@
             // btReportSave
             // 
             btReportSave.Font = new Font("Yu Gothic UI", 14F);
-            btReportSave.Location = new Point(12, 385);
+            btReportSave.Location = new Point(13, 385);
             btReportSave.Name = "btReportSave";
             btReportSave.Size = new Size(68, 40);
             btReportSave.TabIndex = 13;
@@ -366,11 +368,33 @@
             // 
             ofdReportFileOpen.FileName = "openFileDialog1";
             // 
+            // btReportClear
+            // 
+            btReportClear.Font = new Font("Yu Gothic UI", 9F);
+            btReportClear.Location = new Point(458, 11);
+            btReportClear.Name = "btReportClear";
+            btReportClear.Size = new Size(71, 23);
+            btReportClear.TabIndex = 15;
+            btReportClear.Text = "項目クリア";
+            btReportClear.UseVisualStyleBackColor = true;
+            btReportClear.Click += btReportClear_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(358, 8);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 16;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
+            Controls.Add(btReportClear);
             Controls.Add(statusStrip1);
             Controls.Add(btReportSave);
             Controls.Add(btReportOpen);
@@ -442,5 +466,7 @@
         private ToolStripStatusLabel tslbMessage;
         private OpenFileDialog ofdReportFileOpen;
         private SaveFileDialog sfdReportFileSave;
+        private Button btReportClear;
+        private Button button1;
     }
 }

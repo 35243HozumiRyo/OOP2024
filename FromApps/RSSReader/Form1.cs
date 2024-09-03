@@ -24,8 +24,10 @@ namespace RSSReader {
                 var xdoc = XDocument.Load(url);
 
                 var xtitles = xdoc.Root.Descendants("item").Select(item => item.Element("title").Value);
-                foreach(var title in xtitles) {
+                var links = xdoc.Root.Descendants("item").Select(item => item.Element("link").Value);
+                foreach (var title in xtitles ) {
                     lbRssTitle.Items.Add(title);
+                    lbRssTitle.Items.Add(links);
                 }
             }
         }

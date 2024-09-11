@@ -13,7 +13,7 @@ namespace RSSReader {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new a());
+            Application.Run(new Form1());
         }
     }
 }

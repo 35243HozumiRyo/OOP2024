@@ -42,7 +42,7 @@ namespace CarReportSystem {
         private void inputItemsAllClear() {
             dtpDate.Value = DateTime.Now;
             cbAuthor.Text = "";
-            setRadioButtonMaker(CarReport.MakerGroup.なし);
+            setRadioButtonMaker(CarReport.MakerGroup.NONE);
             cbCarName.Text = "";
             tbReport.Text = "";
             pbPicture.Image = null;
@@ -79,7 +79,7 @@ namespace CarReportSystem {
         //指定したメーカーのラジオボタンをセット
         private void setRadioButtonMaker(CarReport.MakerGroup targetMaker) {
             switch (targetMaker) {
-                case CarReport.MakerGroup.なし:
+                case CarReport.MakerGroup.NONE:
                     rbAllClear();
                     break;
                 case CarReport.MakerGroup.トヨタ:

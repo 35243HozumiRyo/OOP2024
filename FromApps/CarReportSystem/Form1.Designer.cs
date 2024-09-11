@@ -56,7 +56,6 @@
             ofdReportFileOpen = new OpenFileDialog();
             sfdReportFileSave = new SaveFileDialog();
             btReportClear = new Button();
-            button1 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).BeginInit();
@@ -343,7 +342,6 @@
             btModfyReport.TabIndex = 10;
             btModfyReport.Text = "修正";
             btModfyReport.UseVisualStyleBackColor = true;
-            btModfyReport.Click += btModfyReport_Click;
             // 
             // ofdPicFileOpen
             // 
@@ -377,23 +375,12 @@
             btReportClear.TabIndex = 15;
             btReportClear.Text = "項目クリア";
             btReportClear.UseVisualStyleBackColor = true;
-            btReportClear.Click += btReportClear_Click;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(358, 8);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 16;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
             Controls.Add(btReportClear);
             Controls.Add(statusStrip1);
             Controls.Add(btReportSave);
@@ -467,6 +454,5 @@
         private OpenFileDialog ofdReportFileOpen;
         private SaveFileDialog sfdReportFileSave;
         private Button btReportClear;
-        private Button button1;
     }
 }

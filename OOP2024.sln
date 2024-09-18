@@ -123,6 +123,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter13", "Chapter13", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEntityframework", "Chapter13\SampleEntityframework\SampleEntityframework.csproj", "{886E41CE-5843-4CB0-99B2-778805F39026}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOSample", "FromApps\ADOSample\ADOSample.csproj", "{1CADF618-A969-4B90-835A-5DDE118AE660}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -277,6 +279,10 @@ Global
 		{886E41CE-5843-4CB0-99B2-778805F39026}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886E41CE-5843-4CB0-99B2-778805F39026}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886E41CE-5843-4CB0-99B2-778805F39026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CADF618-A969-4B90-835A-5DDE118AE660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CADF618-A969-4B90-835A-5DDE118AE660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CADF618-A969-4B90-835A-5DDE118AE660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CADF618-A969-4B90-835A-5DDE118AE660}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -329,6 +335,7 @@ Global
 		{16AC4252-C423-4AFE-ABB2-965A5986F4E7} = {E1B9B148-BBA0-4641-BC1A-8FB69D468BCD}
 		{BD376A0F-6B48-445B-8859-D7E2878778B1} = {C6A432BE-952B-4822-B5BC-0FA0CF6DA8E5}
 		{886E41CE-5843-4CB0-99B2-778805F39026} = {BCA3A11F-2CBC-4C8B-8E28-A566D2D4033A}
+		{1CADF618-A969-4B90-835A-5DDE118AE660} = {E1B9B148-BBA0-4641-BC1A-8FB69D468BCD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2CF6115A-85D4-4563-A567-828530BE6507}

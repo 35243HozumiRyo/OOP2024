@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,18 +45,25 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_5() {
-            var Year = Library.Books.Where(x => x.PublishedYear == 2016);
-            foreach (var item in Year)
-
-                Console.WriteLine($"{ Library.Categories.Where(x => x.Id == item.CategoryId)}");
+            var query = Library.Books.Where(b => b.PublishedYear ==2016).Join(Library.Categories,book=>book.CategoryId,category=>category.Id,(book,category)=>category.Name).Distinct();
+            foreach (var item in query) Console.WriteLine(item);
         }
-
+    
         private static void Exercise1_6() {
-            
+            var query = Library.Books.Join(Library.Categories, book => book.CategoryId, category => category.Id, (book, category) => new { book.Title, CategoryName = category.Name }).GroupBy(x=>x.CategoryName).OrderBy(x=>x.Key);
+            foreach (var group in query) {
+                Console.WriteLine("#{0}", group.Key);
+                foreach (var item in group) Console.WriteLine(" {0}", item.Title);
+            }
         }
         
         private static void Exercise1_7() {
-            
+            var categoryId = Library.Categories.Single(c=>c.Name == "Development").Id;
+            var query = Library.Books.Where(b=>b.CategoryId == categoryId).GroupBy(b=>b.PublishedYear).OrderBy(x=>x.Key);
+            foreach (var group in query) {
+                Console.WriteLine("#{0}", group.Key);
+                foreach (var item in group) Console.WriteLine(" {0}", item.Title);
+            }
         }
 
         private static void Exercise1_8() {

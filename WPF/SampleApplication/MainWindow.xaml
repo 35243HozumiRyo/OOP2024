@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SampleApplication"
         mc:Ignorable="d"
-        Title="Hello World" Height="300" Width="300" FontSize="14">
-    <DockPanel Margin="4">
+        Title="Hello world!" Height="300" Width="300" FontSize="14">
+    <DockPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="okButton" Content="OK" Margin="5" Width="75" Click="okButton_Click"/>
+            <Button x:Name="okButton"  Content="OK" Margin="5" Width="75" Click="okButton_Click"/>
             <Button x:Name="cancelButton" Content="キャンセル" Margin="5" Width="75" Click="cancelButton_Click"/>
         </StackPanel>
         <StackPanel>
@@ -16,4 +16,6 @@
             <TextBox x:Name="messageTextBox" TextWrapping="Wrap" Height="23" Width="120"/>
         </StackPanel>
     </DockPanel>
+
+
 </Window>

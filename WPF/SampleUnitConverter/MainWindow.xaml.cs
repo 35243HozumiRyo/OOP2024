@@ -13,24 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CollorChecker {
+namespace SampleUnitConverter {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
-        }
-
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
-            int value = (int)rSlider.Value;
-
-
-
-        }
-
-        private void stockButton_Click(object sender, RoutedEventArgs e) {
-
         }
     }
 }

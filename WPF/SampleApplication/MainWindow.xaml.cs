@@ -27,7 +27,7 @@ namespace SampleApplication {
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e) {
-            MessageBox.Show(string.Format("キャンセルされました。"));
+            MessageBox.Show("キャンセルされました。");
         }
     }
 }

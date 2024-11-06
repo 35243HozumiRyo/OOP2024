@@ -23,7 +23,7 @@ namespace GridSample {
         }
 
         private void checkBox_Checked(object sender, RoutedEventArgs e) {
-            checkBoxTextBlock.Text = "";
+            checkBoxTextBlock.Text = "チェック済み";
         }
 
         private void checkBox_Unchecked(object sender, RoutedEventArgs e) {
@@ -41,8 +41,9 @@ namespace GridSample {
         private void blueRadioButton_Checked(object sender, RoutedEventArgs e) {
             colorTextBox.Text = "青";
         }
+
         private void seasonComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            seasonTextBolck.Text = (string)((ComboBoxItem)seasonComboBox.SelectedItem).Content;
+            seasonTextBlock.Text = (string)((ComboBoxItem)seasonComboBox.SelectedItem).Content;
         }
     }
 }

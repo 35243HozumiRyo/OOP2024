@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Section01;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Section02 {
                 new GreetingAfternoon(),
                 new GreetingEvening(),
             };
+
             foreach (var greeting in greetings) {
                 string msg = greeting.GetMessage();
                 Console.WriteLine(msg);

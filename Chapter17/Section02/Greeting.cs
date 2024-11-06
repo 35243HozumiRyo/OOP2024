@@ -9,19 +9,19 @@ namespace Section01 {
 
     // List 17-2
     class GreetingMorning : IGreeting {
-        public override string GetMessage() {
+        public string GetMessage() {
             return "おはよう";
         }
     }
 
     class GreetingAfternoon : IGreeting {
-        public override string GetMessage() {
+        public string GetMessage() {
             return "こんにちは";
         }
     }
 
     class GreetingEvening : IGreeting {
-        public override string GetMessage() {
+        public string GetMessage() {
             return "こんばんは";
         }
     }

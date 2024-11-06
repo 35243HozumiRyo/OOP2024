@@ -12,11 +12,13 @@ namespace Section01 {
                 new GreetingAfternoon(),
                 new GreetingEvening(),
             };
+
             foreach (var greeting in greetings) {
                 string msg = greeting.GetMessage();
                 Console.WriteLine(msg);
             }
             Console.ReadLine();
+
         }
     }
 }

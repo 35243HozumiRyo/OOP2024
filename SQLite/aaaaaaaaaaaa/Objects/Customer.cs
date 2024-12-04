@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CustomerApp.Objects {
     public class Customer {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey,AutoIncrement]
         public int Id { get; set; }
         /// <summary>
         /// 名前
@@ -17,19 +18,18 @@ namespace CustomerApp.Objects {
         /// 電話番号
         /// </summary>
         public string Phone { get; set; }
-
         /// <summary>
         /// 住所
         /// </summary>
         public string Address { get; set; }
-
         /// <summary>
         /// 画像
         /// </summary>
-        public byte[] Picture { get; set; }
+        public byte[] Image { get; set; }
+        
 
         public override string ToString() {
-            return $"{Id}  {Name}  {Phone}  {Address}";
+            return $"{Id}:{Name}:{Phone}:{Address}";
         }
     }
 }

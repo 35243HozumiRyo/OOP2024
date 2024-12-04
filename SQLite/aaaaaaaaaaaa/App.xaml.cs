@@ -11,11 +11,8 @@ namespace CustomerApp {
     /// App.xaml の相互作用ロジック
     /// </summary>
     public partial class App : Application {
-        static string databaseName = "Customer13.db";
-        static string  folderPass = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        static string databaseName = "Customer05.db";
+        static string folderPass = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         public static string databasePass = System.IO.Path.Combine(folderPass, databaseName);
-
-
-
     }
 }
